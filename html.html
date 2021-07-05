@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>MOTORS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1> لوحة التحكم بالذراع</h1>
+
+    <p>محرك رقم 1</p>
+
+    <div class="range">
+        <div class="sliderValue">
+            <span>180</span>
+        </div>
+        <div class="field">
+            <div class="value left">0</div>
+            <input type="range" min="0" max="180" value="90" steps="1">
+            <div class="value right">180</div>
+        </div>
+    </div>
+
+    <p>محرك رقم 2</p>
+
+    <div class="range">
+        <div class="sliderValue">
+            <span>180</span>
+        </div>
+        <div class="field">
+            <div class="value left">
+                0</div>
+            <input type="range" min="0" max="180" value="90" steps="1">
+            <div class="value right">
+                180</div>
+        </div>
+    </div>
+
+    <p>محرك رقم 3</p>
+
+    <div class="range">
+        <div class="sliderValue">
+            <span>180</span>
+        </div>
+        <div class="field">
+            <div class="value left">
+                0</div>
+            <input type="range" min="0" max="180" value="90" steps="1">
+            <div class="value right">
+                180</div>
+        </div>
+    </div>
+
+    <p>محرك رقم 4</p>
+
+    <div class="range">
+        <div class="sliderValue">
+            <span>180</span>
+        </div>
+        <div class="field">
+            <div class="value left">
+                0</div>
+            <input type="range" min="0" max="180" value="90" steps="1">
+            <div class="value right">
+                180</div>
+        </div>
+    </div>
+    <p>محرك رقم 5</p>
+
+    <div class="range">
+        <div class="sliderValue">
+            <span>180</span>
+        </div>
+        <div class="field">
+            <div class="value left">
+                0</div>
+            <input type="range" min="0" max="180" value="90" steps="1">
+            <div class="value right">
+                180</div>
+        </div>
+    </div>
+
+
+    <p>محرك رقم 6</p>
+
+    <div class="range">
+        <div class="sliderValue">
+            <span>180</span>
+        </div>
+        <div class="field">
+            <div class="value left">
+                0</div>
+            <input type="range" min="0" max="180" value="90" steps="1">
+            <div class="value right">
+                180</div>
+        </div>
+    </div>
+    <br>
+    <button type="button" class=btn> حفظ</button>
+    <br>
+    <button type="button" class="btn"> تشغيل</button>
+
+    <script>
+        $(document).ready(function () {
+
+            $('input[type="range"]').on('input', function(){
+                var bubble = $(this).parent().parent().find('.sliderValue span');
+                bubble.text($(this).val());
+                bubble.addClass('show');
+                bubble.css('left', $(this).val() / 2 + '%');
+            });
+            
+            $('input[type="range"]').on('blur', function(){
+                $(this).parent().parent().find('.sliderValue span').removeClass('show');
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
